@@ -11,7 +11,7 @@ import java.util.HashSet;
 public class TripletsQuestion {
 	public static void main(String[] args) {
 		
-		HashSet<Integer> set = new HashSet<>();
+	HashSet<Integer> set = new HashSet<>();
 		Scanner scan = new Scanner(System.in);
 		int size = scan.nextInt();
 		int d = scan.nextInt();
