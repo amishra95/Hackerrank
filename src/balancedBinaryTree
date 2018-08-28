@@ -1,22 +1,33 @@
-// SOlution forked from BRIAN JAMES CLARKE
-boolean checkBST(Node root) {
+   boolean checkBST(Node root) {
+
+  //HashSet<Integer> set  = new HashSet<>();
+  
   if (root == null) {
     return true;
   }
   
-  if (root.left != null) {
-    if (root.left.data >= root.data) {
-      return false;
-    }
-    return checkBST(root.left);
-  } 
-  
-  if (root.right != null) {
-    if (root.right.data <= root.data) {
-      return false;
-    }
-    return checkBST(root.right);
-  } 
-  
-  return true;
+  return checkTree(root.left, 0, root.data) && checkTree(root.right, root.data, Integer.MAX_VALUE);
 }
+
+boolean checkTree(Node root, int left, int right) {
+  
+  if (root == null) {
+    return true;
+  }
+  
+  if (root.data < right && root.data > left) {
+    // left child
+    int leftNewLeft = left;
+    int leftNewRight = root.data;
+    
+    // right child
+    int rightNewLeft = root.data;
+    int rightNewRight = right;
+    
+    return checkTree(root.left, leftNewLeft, leftNewRight) && checkTree(root.right, rightNewLeft, rightNewRight);
+  }
+  
+  return false;
+  
+}
+
