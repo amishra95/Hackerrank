@@ -1,38 +1,22 @@
-   boolean checkBST(Node root) {
-    if(root== null)
-        return true;
-   
-        if(root.left == null && root.right == null){
-        return true;
+// SOlution forked from BRIAN JAMES CLARKE
+boolean checkBST(Node root) {
+  if (root == null) {
+    return true;
+  }
+  
+  if (root.left != null) {
+    if (root.left.data >= root.data) {
+      return false;
     }
-    
-   int leftValue = helper(root.left);
-    int rightValue = helper(root.right);
-     
-        if(leftValue.val - rightValue.val < 0){
-            return false;
-            
-        }
-        return true;
-        
+    return checkBST(root.left);
+  } 
+  
+  if (root.right != null) {
+    if (root.right.data <= root.data) {
+      return false;
     }
-
-public int helper(Node root){
-int count = 0;
-    
-    if(root == null){
-        return true;
-    }
-    if(root.left == null && root.right == null){
-        return root.val;
-    }
-    
-    int left = helper(root.left);
-    int right = helper(root.right);
-    
-   if(left.val - right.val < 0){
-       return left;
-   }
-    
-    return 0;
+    return checkBST(root.right);
+  } 
+  
+  return true;
 }
