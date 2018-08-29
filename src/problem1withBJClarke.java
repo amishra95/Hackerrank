@@ -1,4 +1,5 @@
-
+//@BJClarke
+// @AMishra95
 public class problem1withBJClarke {
 	   static List<Integer> minimalOperations(List<String> words) {
            // loop through each word
