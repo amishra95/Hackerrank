@@ -1,3 +1,5 @@
+// You are given a string of characters and you are required to reduce it to replace all occurences of two or more consequtive "e"s with a single e.
+
 
 public class yelpInterviewQuestion {
 	
