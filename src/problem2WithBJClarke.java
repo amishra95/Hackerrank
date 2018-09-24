@@ -32,5 +32,5 @@ public class problem2WithBJClarke {
   return responses;
 
 }
-
 }
+
