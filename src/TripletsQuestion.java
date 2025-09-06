@@ -7,6 +7,7 @@ import java.util.HashSet;
 /**
  * @author Avanish Mishra
  *
+ *
  */
 public class TripletsQuestion {
 	public static void main(String[] args) {
@@ -31,3 +32,4 @@ public class TripletsQuestion {
 	}
 
 }
+
